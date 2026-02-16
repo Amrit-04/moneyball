@@ -1,0 +1,160 @@
+# Moneyball Configuration
+
+# Data Paths
+data:
+  raw_dir: "data/raw"
+  features_dir: "data/features"
+  models_dir: "models"
+  
+# Logging
+logging:
+  log_dir: "logs"
+  level: "INFO"
+  
+# Data Fetching
+data_fetching:
+  # Crypto
+  crypto:
+    top_n_coins: 100  # Fetch top N coins by market cap
+    min_market_cap: 10000000  # $10M minimum
+    
+  # Stocks - Market Selection
+  stocks:
+    market: "auto"  # "US", "IN", or "auto" (select based on data availability)
+    top_n_stocks: 200  # Fetch top N small-cap stocks
+    min_market_cap: 50000000  # $50M minimum
+    max_market_cap: 2000000000  # $2B maximum (small-cap definition)
+    
+  # Incremental fetching
+  incremental: true
+  lookback_days: 90  # Fetch last 90 days (CoinGecko free tier limit)
+  
+  # API rate limits
+  rate_limits:
+    coingecko_calls_per_minute: 50
+    reddit_calls_per_minute: 60
+    github_calls_per_hour: 5000
+    
+# Feature Engineering
+features:
+  # Missing data handling
+  forward_fill_days: 7
+  
+  # Outlier handling
+  winsorize_percentiles: [1, 99]
+  
+  # Normalization
+  zscore_window_days: 90
+  
+  # Regime detection
+  regime:
+    n_states: 3  # Bull, Bear, Sideways
+    min_history_weeks: 52
+    
+# Model Training
+model:
+  # Target definition
+  breakout_threshold: 0.15  # 15% return
+  breakout_horizon_days: 30
+  
+  # Walk-forward validation
+  train_months: 6
+  test_months: 1
+  expanding_window: true
+  
+  # Hyperparameter tuning
+  optuna_trials: 50
+  optuna_timeout_seconds: 3600
+  
+  # Performance thresholds
+  min_roc_auc: 0.65
+  min_sharpe_ratio: 1.0
+  
+  # Feature selection
+  max_features: 50  # SHAP-based selection
+  
+  # Class imbalance
+  use_scale_pos_weight: true
+  
+# Backtesting
+backtest:
+  top_n_assets: 10  # Portfolio size
+  rebalance_freq: "W"  # Weekly
+  hold_days: 30
+  
+  # Benchmarks
+  crypto_benchmark: "BTC"
+  stock_benchmark: "SPY"
+  
+# Agent System
+agents:
+  # LLM Configuration
+  llm:
+    provider: "gemini"  # "gemini" or "langchain"
+    model: "gemini-2.0-flash"  # Fast and cost-effective
+    temperature: 0.3
+    max_tokens: 2048
+    
+  # Timeouts
+  timeout_seconds: 15  # Max time for memo generation
+  
+  # Retry logic
+  max_retries: 1
+  
+  # Caching
+  cache_ttl_hours: 1
+  stale_data_threshold_days: 7
+  
+# Dashboard
+dashboard:
+  title: "Moneyball - AI Investment Discovery"
+  layout: "wide"
+  
+  # Default settings
+  default_universe: ["Crypto"]
+  default_top_n: 20
+  
+  # Performance
+  cache_ttl_seconds: 3600
+  
+# Data Validation
+validation:
+  min_history_months: 6
+  min_crypto_assets: 50
+  min_stock_assets: 100
+  
+# API Endpoints (override with environment variables)
+api:
+  coingecko_base_url: "https://api.coingecko.com/api/v3"
+  dune_base_url: "https://api.dune.com/api/v1"
+  
+# Asset Lists (can be updated)
+assets:
+  # Top crypto projects to track (by market cap)
+  crypto_watchlist:
+    - "bitcoin"
+    - "ethereum"
+    - "binancecoin"
+    - "cardano"
+    - "solana"
+    - "polkadot"
+    - "avalanche-2"
+    - "chainlink"
+    - "polygon"
+    - "uniswap"
+    
+  # GitHub repos for developer activity
+  crypto_repos:
+    bitcoin: "bitcoin/bitcoin"
+    ethereum: "ethereum/go-ethereum"
+    cardano: "input-output-hk/cardano-node"
+    solana: "solana-labs/solana"
+    polkadot: "paritytech/polkadot"
+    
+  # Reddit subreddits for sentiment
+  subreddits:
+    - "cryptocurrency"
+    - "CryptoMarkets"
+    - "stocks"
+    - "pennystocks"
+    - "investing"
