@@ -1,5 +1,11 @@
 # Moneyball - AI Investment Discovery System
 
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+
 Finding undervalued assets before they break out, using the Moneyball philosophy applied to crypto and small-cap stocks.
 
 ## Overview
@@ -33,7 +39,19 @@ cd moneyball
 
 python -m venv venv
 # Windows: venv\Scripts\activate
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # Linux/Mac: source venv/bin/activate
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 
 pip install -r requirements.txt
 ```
@@ -63,19 +81,49 @@ pip install -r requirements.txt
 
 ```bash
 # 1. Fetch data (15-20 min first run)
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python -m src.fetch.crypto
 python -m src.fetch.stocks
 
 # 2. Engineer features
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python -m src.features.pipeline
 
 # 3. Train model
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python -m src.models.train
 
 # 4. Generate recommendations
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 python -m src.models.predict
 
 # 5. Launch dashboard
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 streamlit run src/dashboard/app.py
 ```
 
@@ -107,10 +155,22 @@ The dashboard adds the project root to `sys.path` automatically. To run other mo
 
 ```bash
 # Windows PowerShell
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 $env:PYTHONPATH = "s:\path\to\moneyball"
 python -m src.models.predict
 
 # Linux/Mac
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Quant](https://img.shields.io/badge/Domain-Quantitative%20Finance-blue?style=flat)](https://github.com/Amrit-04/moneyball)
+[![Machine Learning](https://img.shields.io/badge/ML-Signal%20Screening-orange?style=flat)](https://github.com/Amrit-04/moneyball)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 export PYTHONPATH=/path/to/moneyball
 python -m src.models.predict
 ```
