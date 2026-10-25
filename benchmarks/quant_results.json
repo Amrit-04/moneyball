@@ -1,0 +1,307 @@
+{
+  "timestamp_utc": "2026-10-25T22:28:35.824417+00:00",
+  "total_benchmark_duration_sec": 21.46,
+  "data_panel": {
+    "num_assets": 24,
+    "trading_days": 1260,
+    "asset_universe": [
+      "AAPL",
+      "MSFT",
+      "GOOGL",
+      "AMZN",
+      "NVDA",
+      "META",
+      "TSLA",
+      "JPM",
+      "V",
+      "JNJ",
+      "WMT",
+      "PG",
+      "XOM",
+      "UNH",
+      "SPY",
+      "QQQ",
+      "IWM",
+      "HYG",
+      "TLT",
+      "GLD",
+      "BTC",
+      "ETH",
+      "SOL",
+      "BNB"
+    ]
+  },
+  "hmm_regimes": {
+    "n_states": 3,
+    "state_labels": [
+      "Low-Vol Bull",
+      "Transitional / Sideways",
+      "High-Vol Bear"
+    ],
+    "transition_matrix": [
+      [
+        0.9419013406038291,
+        0.04843278875786582,
+        0.009665870638305006
+      ],
+      [
+        0.035940325053274644,
+        0.9506516437848084,
+        0.013408031161916913
+      ],
+      [
+        2.5001594428106223e-56,
+        0.039091626903254656,
+        0.9609083730967453
+      ]
+    ],
+    "stationary_distribution": [
+      0.2925476123786234,
+      0.4729123641356728,
+      0.23454002348570374
+    ]
+  },
+  "ml_alpha_walk_forward": {
+    "Ridge": {
+      "mean_rank_ic": 0.0359,
+      "std_rank_ic": 0.3749,
+      "icir": 1.521,
+      "hit_rate": 0.5429,
+      "newey_west_tstat": 1.936,
+      "newey_west_pvalue": 0.0529,
+      "n_observations": 315
+    },
+    "RandomForest": {
+      "mean_rank_ic": 0.0224,
+      "std_rank_ic": 0.3133,
+      "icir": 1.137,
+      "hit_rate": 0.5489,
+      "newey_west_tstat": 1.466,
+      "newey_west_pvalue": 0.1428,
+      "n_observations": 315
+    },
+    "GradientBoosting": {
+      "mean_rank_ic": 0.0146,
+      "std_rank_ic": 0.2907,
+      "icir": 0.798,
+      "hit_rate": 0.5463,
+      "newey_west_tstat": 0.969,
+      "newey_west_pvalue": 0.3323,
+      "n_observations": 315
+    }
+  },
+  "portfolio_backtest_net_10bps": {
+    "Equal_Weight": {
+      "annualized_return": 0.4415,
+      "annualized_volatility": 0.2009,
+      "sharpe_ratio": 2.098,
+      "sortino_ratio": 3.943,
+      "max_drawdown": 0.1358,
+      "calmar_ratio": 3.252,
+      "final_wealth": 3.5368
+    },
+    "Classical_Markowitz": {
+      "annualized_return": 0.2842,
+      "annualized_volatility": 0.1213,
+      "sharpe_ratio": 2.178,
+      "sortino_ratio": 3.741,
+      "max_drawdown": 0.0713,
+      "calmar_ratio": 3.987,
+      "final_wealth": 2.2858
+    },
+    "HMM_Regime_QAOA": {
+      "annualized_return": 0.2493,
+      "annualized_volatility": 0.1449,
+      "sharpe_ratio": 1.582,
+      "sortino_ratio": 2.32,
+      "max_drawdown": 0.0909,
+      "calmar_ratio": 2.744,
+      "final_wealth": 1.9857
+    },
+    "HMM_Gated_NoQAOA": {
+      "annualized_return": 0.3017,
+      "annualized_volatility": 0.1395,
+      "sharpe_ratio": 2.02,
+      "sortino_ratio": 3.479,
+      "max_drawdown": 0.0859,
+      "calmar_ratio": 3.514,
+      "final_wealth": 2.3833
+    },
+    "regime_distribution": {
+      "Bull_pct": 0.139,
+      "Transitional_pct": 0.639,
+      "Bear_pct": 0.222
+    }
+  },
+  "monte_carlo_risk_benchmarks": {
+    "paths_100k": {
+      "n_paths": 100000,
+      "horizon_days": 10,
+      "cuda_device": "cuda",
+      "cuda_latency_ms": 3.52,
+      "cuda_throughput_paths_sec": 28442963.0,
+      "cpu_vectorized_latency_ms": 119.19,
+      "cpu_loop_extrapolated_latency_ms": 1571.82,
+      "speedup_vs_cpu_vectorized": 33.9,
+      "speedup_vs_cpu_unvectorized_loop": 447.1,
+      "VaR_95": 0.05192127078771591,
+      "CVaR_95": 0.0662345215678215,
+      "VaR_99": 0.07549561560153961,
+      "CVaR_99": 0.08662089705467224
+    },
+    "paths_1m": {
+      "n_paths": 1000000,
+      "horizon_days": 10,
+      "cuda_device": "cuda",
+      "cuda_latency_ms": 29.26,
+      "cuda_throughput_paths_sec": 34178780.0,
+      "cpu_vectorized_latency_ms": 1255.13,
+      "cpu_loop_extrapolated_latency_ms": 18615.0,
+      "speedup_vs_cpu_vectorized": 42.9,
+      "speedup_vs_cpu_unvectorized_loop": 636.2,
+      "VaR_95": 0.05171103775501251,
+      "CVaR_95": 0.06632042676210403,
+      "VaR_99": 0.075552798807621,
+      "CVaR_99": 0.0870368629693985
+    }
+  },
+  "quantum_qaoa_benchmarks": {
+    "N_qubits": 14,
+    "K_cardinality": 4,
+    "exact_ground_state": {
+      "method": "Exact_Ground_State_BruteForce",
+      "solve_latency_ms": 72.63,
+      "ground_state_energy": -1.2786,
+      "worst_energy": 311.23474,
+      "bitstring": "01101100000000",
+      "selected_assets": [
+        "MSFT",
+        "GOOGL",
+        "NVDA",
+        "META"
+      ],
+      "approximation_ratio": 1.0
+    },
+    "qaoa_circuits": {
+      "p_1": {
+        "qubits_N": 14,
+        "depth_p": 1,
+        "solve_latency_ms": 140.2,
+        "expected_energy": 20.09526,
+        "optimal_ground_energy": -1.2786,
+        "worst_energy": 311.23474,
+        "approximation_ratio": 0.9316,
+        "sampled_approximation_ratio": 0.0,
+        "ground_state_probability": 0.0003,
+        "optimal_bitstring": "01101100000000",
+        "sampled_bitstring": "11111111111111",
+        "selected_assets": [
+          "AAPL",
+          "MSFT",
+          "GOOGL",
+          "AMZN",
+          "NVDA",
+          "META",
+          "TSLA",
+          "JPM",
+          "V",
+          "JNJ",
+          "WMT",
+          "PG",
+          "XOM",
+          "UNH"
+        ],
+        "cardinality_target": 4,
+        "cardinality_achieved": 14,
+        "iterations": 60
+      },
+      "p_2": {
+        "qubits_N": 14,
+        "depth_p": 2,
+        "solve_latency_ms": 216.47,
+        "expected_energy": 12.81396,
+        "optimal_ground_energy": -1.2786,
+        "worst_energy": 311.23474,
+        "approximation_ratio": 0.9549,
+        "sampled_approximation_ratio": 0.9068,
+        "ground_state_probability": 0.0,
+        "optimal_bitstring": "01101100000000",
+        "sampled_bitstring": "00010000000000",
+        "selected_assets": [
+          "AMZN"
+        ],
+        "cardinality_target": 4,
+        "cardinality_achieved": 1,
+        "iterations": 60
+      },
+      "p_3": {
+        "qubits_N": 14,
+        "depth_p": 3,
+        "solve_latency_ms": 305.08,
+        "expected_energy": 28.22046,
+        "optimal_ground_energy": -1.2786,
+        "worst_energy": 311.23474,
+        "approximation_ratio": 0.9056,
+        "sampled_approximation_ratio": 0.8363,
+        "ground_state_probability": 0.0,
+        "optimal_bitstring": "01101100000000",
+        "sampled_bitstring": "00000000000000",
+        "selected_assets": [],
+        "cardinality_target": 4,
+        "cardinality_achieved": 0,
+        "iterations": 60
+      }
+    },
+    "simulated_annealing": {
+      "solver": "SimulatedAnnealing",
+      "solve_latency_ms": 496.76,
+      "best_energy": -1.2786,
+      "bitstring": "01101100000000",
+      "selected_assets": [
+        "MSFT",
+        "GOOGL",
+        "NVDA",
+        "META"
+      ],
+      "cardinality_achieved": 4,
+      "total_steps": 28500
+    },
+    "classical_markowitz": {
+      "method": "Classical_Markowitz_SLSQP",
+      "solve_latency_ms": 5.45,
+      "selected_assets": [
+        "MSFT",
+        "NVDA",
+        "JPM",
+        "UNH"
+      ],
+      "bitstring": "01001001000001",
+      "expected_return": 0.3397,
+      "expected_volatility": 0.1936,
+      "sharpe_ratio": 1.755
+    },
+    "equal_weight": {
+      "method": "Equal_Weight_1_over_N",
+      "solve_latency_ms": 0.01,
+      "selected_assets": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "NVDA",
+        "META",
+        "TSLA",
+        "JPM",
+        "V",
+        "JNJ",
+        "WMT",
+        "PG",
+        "XOM",
+        "UNH"
+      ],
+      "expected_return": 0.283,
+      "expected_volatility": 0.1859,
+      "sharpe_ratio": 1.522
+    }
+  }
+}

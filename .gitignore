@@ -1,10 +1,10 @@
 # Moneyball .gitignore
 
 # Data directories (large files, not for version control)
-data/
-!data/.gitkeep
-!data/raw/.gitkeep
-!data/features/.gitkeep
+/data/
+!/data/.gitkeep
+!/data/raw/.gitkeep
+!/data/features/.gitkeep
 
 # Logs
 logs/
